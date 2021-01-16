@@ -26,20 +26,11 @@ let computerChoice = alert("The computer choose " + computerRandomChoice );
 
 // If the user types something other than Rock, Paper, or Scissors.
 nonRPS = () => {
-if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
-    alert("That's not a choice O.o");
-}
-}
-
-userNonRPS = nonRPS();
-
-restartGame = () => {
-    if (userNonRPS) {
-      return userChoice
+    if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
+        return ("That's not a choice O.o");   
     }
 }
 
-restartGame()
 // If the user chooses rock.
 rockEval = () => {
     if (userChoice == "rock" && computerRandomChoice == R) {
@@ -83,21 +74,24 @@ scissorsEval = () => {
 userRock = rockEval();
 userPaper = paperEval();
 userScissors = scissorsEval();
+userNonRPS = nonRPS();
 
 // Game is played.
 gamePlay = () => {
-    if (userRock) {
-        alert(userRock)
+    if (userNonRPS) {
+        return (userNonRPS)
+    }
+    else if (userRock) {
+        return (userRock)
     }
     else if (userPaper) {
-        alert(userPaper)
+        return (userPaper)
     }
     else if (userScissors) {
-        alert(userScissors)
+        return (userScissors)
     }
 }
 
-// console.log(userChoice);
-// console.log(gamePlay());
+alert(gamePlay())
 
 
