@@ -14,8 +14,7 @@ const S = "Scissors"
 // Creating array for user and computer choices
 const playerChoices = [R, P, S];
 const computerChoices = [R, P, S];
-let playerChoice = [];
-let computerChoice = [];
+
 
 // Welcome and getting players choice
 let intro = alert("Welcome to Rock, Paper, Scissors");
@@ -23,18 +22,21 @@ let userChoice = prompt("Choose between Rock, Paper, or Scissors");
 
 // Users choice
 userPlay = () => {
-    if (userChoice === "Rock") {
-    return ("You choose rock")
+    if (userChoice == "Rock" || userChoice == "rock") {
+        return ("You choose rock")
+    }
+    else if (userChoice == "Paper" || userChoice == "paper") {
+        return ("You choose Paper")
+    }
+    else if (userChoice == "Scissors" || userChoice == "scissors") {
+        return ("You choose Scissors")
+    }
+    else {
+        return ("That's not a choice...")
+    }
 }
-}
-console.log(userPlay(userChoice))
 
-// Computer's choice
-// computerPlay => (computerChoices) = {
+// Computer randomly selects from choices
+let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+let computerChoice = alert("The computer choose " + computerRandomChoice );
 
-// }
-
-// How each game is evaluated
-// gameRound => (playerChoices, computerChoices) = {
-
-// }
