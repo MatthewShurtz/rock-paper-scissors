@@ -14,15 +14,8 @@ const S = "Scissors"
 // Array for computer choice.
 const computerChoices = [R, P, S];
 
-// Welcome
-let intro = alert("Welcome to Rock, Paper, Scissors");
-
-// User chooses between Rock, Paper, and Scissors, then made lower case.
-let userChoice = prompt("Choose between Rock, Paper, or Scissors").toLowerCase();
-
 // Computer randomly selects from choices
 let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
-let computerChoice = alert("The computer choose " + computerRandomChoice );
 
 // If the user types something other than Rock, Paper, or Scissors.
 nonRPS = () => {
@@ -91,7 +84,5 @@ gamePlay = () => {
         return (userScissors)
     }
 }
-
-alert(gamePlay())
 
 

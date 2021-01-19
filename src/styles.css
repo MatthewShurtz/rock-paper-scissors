@@ -1,0 +1,24 @@
+body {
+  background-color: white;
+  text-align: center;
+}
+
+.subhead {
+  font-size: 20px;
+}
+
+.playing-field {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+
+.options {
+  width: 250px;
+  height: 250px;
+  transition: 0.2s;
+}
+
+.options:hover {
+  margin-top: -12px;
+}
