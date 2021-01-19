@@ -3,8 +3,31 @@ body {
   text-align: center;
 }
 
+.subtitle {
+  margin-bottom: 10px;
+}
+
 .subhead {
-  font-size: 20px;
+  font-size: 30px;
+}
+
+.score-board {
+  font-size: 35px;
+  border: 5px solid black;
+  width: 12%;
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: -35px;
+}
+
+.cvp {
+  margin-top: -5px;
+}
+
+.score-keeper {
+  font-size: 60px;
+  margin-top: -45px;
+  margin-bottom: -5px;
 }
 
 .playing-field {
