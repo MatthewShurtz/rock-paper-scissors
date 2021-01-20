@@ -14,10 +14,9 @@ const P = "Paper"
 const S = "Scissors"
 const computerChoices = [R, P, S];
 
-let cScore = 0;
-let uScore = 0;
-
-gameplay = () => {
+gameplay = () => {     
+        let cScore = 0;
+        let uScore = 0; 
 // If the user chooses rock.
         rk.addEventListener("click", rockEval = () => {
         let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
@@ -26,15 +25,20 @@ gameplay = () => {
             alert("It's a tie -_-")
         }
         else if (computerRandomChoice == P) {
-            alert("You Lose :-(")
             cScore++;
-            return cScore
+            alert("You Lose :-(")
         }
         else if (computerRandomChoice == S) {
-            alert("You Win :-)")
             uScore++;
-            return uScore
+            alert("You Win :-)")
         }
+    playerScoreSelector.textContent = uScore;
+    computerScoreSelector.textContent = cScore;
+    if (uScore == 5 || cScore == 5) {
+    alert("Game Over! Chick a weapon to start a new game!")
+    uScore = 0
+    cScore = 0
+}
 })
 
 // If the user chooses paper.
@@ -42,16 +46,23 @@ gameplay = () => {
         let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
             alert("The computer chose " + computerRandomChoice)
         if (computerRandomChoice == R) {
-        alert("You Win! :-)")
             uScore++;
+            alert("You Win! :-)")
         }
         else if (computerRandomChoice == P) {
             alert("It's a tie -_-")
         }
         else if (computerRandomChoice == S) {
-            alert("You Lose :-(") 
             cScore++;
+            alert("You Lose :-(") 
     }
+    playerScoreSelector.textContent = uScore;
+    computerScoreSelector.textContent = cScore;
+    if (uScore == 5 || cScore == 5) {
+    alert("Game Over! Chick a weapon to start a new game!")
+    uScore = 0
+    cScore = 0
+}
 })
 
 // If the user chooses scissors.
@@ -59,20 +70,24 @@ gameplay = () => {
         let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
             alert("The computer chose " + computerRandomChoice)
         if (computerRandomChoice == R) {
+            cScore++;
             alert("You Lose :-(")
-            cScore++
-
         }
         else if (computerRandomChoice == P) {
-            alert("You Win :-)")
             uScore++;
+            alert("You Win :-)")
         }
         else if (computerRandomChoice == S) {
             alert("It's a tie -_-")
         }
+    playerScoreSelector.textContent = uScore;
+    computerScoreSelector.textContent = cScore;
+    if (uScore == 5 || cScore == 5) {
+    alert("Game Over! Chick a weapon to start a new game!")
+    uScore = 0
+    cScore = 0
+}
 })
-console.log(cScore);
-console.log(uScore);
 }
 gameplay();
 
