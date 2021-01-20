@@ -1,88 +1,78 @@
-// This Rock, Paper, Scissors game will be played in the console with prompts.
-// Once the page is loaded, the user will be asked to choose between Rock, Paper, and Scissors.
-// The user will type their selection in (not case senitive) and will be weight against the computer's selection.
-// The program will evaluate each selection and display the results.
-// Then the winner will be shown.
-// The game will then reset.
+// Rock, Paper, Scissors
 
+// Selectors
+const rk = document.getElementById("rock");
+const pa = document.getElementById("paper");
+const sc = document.getElementById("scissors");
+const opt = document.querySelector(".options")
+let computerScoreSelector = document.querySelector(".computer-score");
+let playerScoreSelector = document.querySelector(".player-score");
 
 // Assigning choices to variable
 const R = "Rock"
 const P = "Paper"
 const S = "Scissors"
-
-// Array for computer choice.
 const computerChoices = [R, P, S];
 
-// Computer randomly selects from choices
-let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)];
+let cScore = 0;
+let uScore = 0;
 
-// If the user types something other than Rock, Paper, or Scissors.
-nonRPS = () => {
-    if (userChoice != "rock" && userChoice != "paper" && userChoice != "scissors") {
-        return ("That's not a choice O.o");   
-    }
-}
-
+gameplay = () => {
 // If the user chooses rock.
-rockEval = () => {
-    if (userChoice == "rock" && computerRandomChoice == R) {
-        return ("It's a tie -_-")
-    }
-    else if (userChoice == "rock" && computerRandomChoice == P) {
-        return ("You Lose :-(")
-    }
-    else if (userChoice == "rock" && computerRandomChoice == S) {
-        return ("You Win :-)")
-    }
-}
+        rk.addEventListener("click", rockEval = () => {
+        let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            alert("The computer chose " + computerRandomChoice)
+        if (computerRandomChoice == R) {
+            alert("It's a tie -_-")
+        }
+        else if (computerRandomChoice == P) {
+            alert("You Lose :-(")
+            cScore++;
+            return cScore
+        }
+        else if (computerRandomChoice == S) {
+            alert("You Win :-)")
+            uScore++;
+            return uScore
+        }
+})
 
 // If the user chooses paper.
-paperEval = () => {
-    if (userChoice == "paper" && computerRandomChoice == R) {
-        return ("You Win! :-)")
+        pa.addEventListener("click", paperEval = () => {
+        let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            alert("The computer chose " + computerRandomChoice)
+        if (computerRandomChoice == R) {
+        alert("You Win! :-)")
+            uScore++;
+        }
+        else if (computerRandomChoice == P) {
+            alert("It's a tie -_-")
+        }
+        else if (computerRandomChoice == S) {
+            alert("You Lose :-(") 
+            cScore++;
     }
-    else if (userChoice == "paper" && computerRandomChoice == P) {
-        return ("It's a tie -_-")
-    }
-    else if (userChoice == "paper" && computerRandomChoice == S) {
-        return ("You Lose :-(")
-    }
-}
+})
 
 // If the user chooses scissors.
-scissorsEval = () => {
-    if (userChoice == "scissors" && computerRandomChoice == R) {
-        return ("You Lose :-(")
-    }
-    else if (userChoice == "scissors" && computerRandomChoice == P) {
-        return ("You Win :-)")
-    }
-    else if (userChoice == "scissors" && computerRandomChoice == S) {
-        return ("It's a tie -_-")
-    }
+        sc.addEventListener("click", scissorsEval = () => {
+        let computerRandomChoice = computerChoices[Math.floor(Math.random() * computerChoices.length)]
+            alert("The computer chose " + computerRandomChoice)
+        if (computerRandomChoice == R) {
+            alert("You Lose :-(")
+            cScore++
+
+        }
+        else if (computerRandomChoice == P) {
+            alert("You Win :-)")
+            uScore++;
+        }
+        else if (computerRandomChoice == S) {
+            alert("It's a tie -_-")
+        }
+})
+console.log(cScore);
+console.log(uScore);
 }
-
-// User choices stored in variable for gameplay.
-userRock = rockEval();
-userPaper = paperEval();
-userScissors = scissorsEval();
-userNonRPS = nonRPS();
-
-// Game is played.
-gamePlay = () => {
-    if (userNonRPS) {
-        return (userNonRPS)
-    }
-    else if (userRock) {
-        return (userRock)
-    }
-    else if (userPaper) {
-        return (userPaper)
-    }
-    else if (userScissors) {
-        return (userScissors)
-    }
-}
-
+gameplay();
 

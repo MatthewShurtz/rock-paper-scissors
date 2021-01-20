@@ -44,4 +44,9 @@ body {
 
 .options:hover {
   margin-top: -12px;
+  cursor: pointer;
+}
+
+.match-result > p {
+  font-size: 35px;
 }
